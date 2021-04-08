@@ -5,12 +5,15 @@
 const dogButton = document.getElementById('dogButton')
 const dogImage = document.getElementById('dogImage')
 const weatherButton = document.getElementById('weatherButton')
+const weatherInput = document.getElementById('weatherInput')
 
+let city = weatherInput.input
 
 /********
  * APIS *
  ********/
-const URL = 'https://dog.ceo/api/breeds/image/random'
+const dogURL = 'https://dog.ceo/api/breeds/image/random'
+const weatherURL = `https://goweather.herokuapp.com/weather/{city}`
 
 
 /******************
@@ -31,6 +34,7 @@ function dogButtonClick() {
 
 function weatherButtonClick() {
     console.log("Button Clicked")
+    console.log("Weather Input:", weatherInput.value)
 }
 
 /********************
@@ -38,7 +42,7 @@ function weatherButtonClick() {
  ********************/
 
 function getDogImage() {
-    fetch(URL)
+    fetch(dogURL)
         .then((res) => res.json())
         .then((data) => {
             console.log('success!');
