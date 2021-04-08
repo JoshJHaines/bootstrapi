@@ -6,6 +6,9 @@ const dogButton = document.getElementById("dogButton");
 const dogImage = document.getElementById("dogImage");
 const weatherButton = document.getElementById("weatherButton");
 const weatherInput = document.getElementById("weatherInput");
+const tempDisplay = document.getElementById("temp");
+const windDisplay = document.getElementById("wind");
+const descDisplay = document.getElementById("description");
 
 
 
@@ -62,5 +65,12 @@ function getWeather() {
 		.then((data) => {
 			console.log("success!");
 			console.log(data);
+            console.log("Temperature:", data.temperature)
+            tempDisplay.innerText = `Temp: ${data.temperature}`
+            console.log("Wind:", data.wind)
+            windDisplay.innerText = `Wind: ${data.wind}`
+            console.log("Description:", data.description)
+            descDisplay.innerText = `Description: ${data.description}`
+
 		});
 }
