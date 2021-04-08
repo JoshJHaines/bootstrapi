@@ -4,6 +4,7 @@
 
 const dogButton = document.getElementById('dogButton')
 const dogImage = document.getElementById('dogImage')
+const weatherButton = document.getElementById('weatherButton')
 
 
 /********
@@ -15,17 +16,26 @@ const URL = 'https://dog.ceo/api/breeds/image/random'
 /******************
  * EVENT LISTENER *
  ******************/
-dogButton.addEventListener("click", buttonClick)
+dogButton.addEventListener("click", dogButtonClick)
+weatherButton.addEventListener("click", weatherButtonClick)
 
 
-/*************
- * FUNCTIONS *
- *************/
+/*******************
+ * EVENT FUNCTIONS *
+ *******************/
 
-function buttonClick() {
+function dogButtonClick() {
     console.log("Button Clicked")
     getDogImage()
 }
+
+function weatherButtonClick() {
+    console.log("Button Clicked")
+}
+
+/********************
+ * HELPER FUNCTIONS *
+ ********************/
 
 function getDogImage() {
     fetch(URL)
