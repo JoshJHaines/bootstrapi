@@ -10,14 +10,11 @@ const tempDisplay = document.getElementById("temp");
 const windDisplay = document.getElementById("wind");
 const descDisplay = document.getElementById("description");
 
-
-
 /********
  * APIS *
  ********/
 const dogURL = "https://dog.ceo/api/breeds/image/random";
-let weatherURL = ""
-
+let weatherURL = "";
 
 /******************
  * EVENT LISTENER *
@@ -35,12 +32,12 @@ function dogButtonClick() {
 }
 
 function weatherButtonClick() {
-    const fullCity = weatherInput.value
-    const city = fullCity.split(" ").join("");
-    weatherURL = `https://goweather.herokuapp.com/weather/${city}`;
+	const fullCity = weatherInput.value;
+	const city = fullCity.split(" ").join("");
+	weatherURL = `https://goweather.herokuapp.com/weather/${city}`;
 	console.log("Button Clicked");
 	console.log("City Input:", fullCity);
-    console.log("API City Input:", city);
+	console.log("API City Input:", city);
 	console.log("URL for City:", weatherURL);
 	getWeather();
 }
@@ -65,12 +62,11 @@ function getWeather() {
 		.then((data) => {
 			console.log("success!");
 			console.log(data);
-            console.log("Temperature:", data.temperature)
-            tempDisplay.innerText = `Temp: ${data.temperature}`
-            console.log("Wind:", data.wind)
-            windDisplay.innerText = `Wind: ${data.wind}`
-            console.log("Description:", data.description)
-            descDisplay.innerText = `Description: ${data.description}`
-
+			console.log("Temperature:", data.temperature);
+			tempDisplay.innerText = `Temp: ${data.temperature}`;
+			console.log("Wind:", data.wind);
+			windDisplay.innerText = `Wind: ${data.wind}`;
+			console.log("Description:", data.description);
+			descDisplay.innerText = `Description: ${data.description}`;
 		});
 }
