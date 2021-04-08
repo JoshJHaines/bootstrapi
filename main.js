@@ -3,6 +3,7 @@
  ********************/
 
 const dogButton = document.getElementById('dogButton')
+const dogImage = document.getElementById('dogImage')
 
 
 /********
@@ -32,5 +33,6 @@ function getDogImage() {
         .then((data) => {
             console.log('success!');
             console.log(data.message);
+            dogImage.src = data.message
     });
 }
