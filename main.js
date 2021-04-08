@@ -5,6 +5,12 @@
 const dogButton = document.getElementById('dogButton')
 
 
+/********
+ * APIS *
+ ********/
+const URL = 'https://dog.ceo/api/breeds/image/random'
+
+
 /******************
  * EVENT LISTENER *
  ******************/
@@ -17,4 +23,14 @@ dogButton.addEventListener("click", buttonClick)
 
 function buttonClick() {
     console.log("Button Clicked")
+    getDogImage()
+}
+
+function getDogImage() {
+    fetch(URL)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log('success!');
+            console.log(data.message);
+    });
 }
